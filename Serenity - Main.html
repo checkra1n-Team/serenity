@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> [BETA] Serenity </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <video id="videoWallpaper" autoplay muted loop playsinline class="video-wallpaper" poster="boot.png">
+        <source src="xperia.mp4" type="video/mp4">
+    </video>
+    <img id="imageWallpaper" class="video-wallpaper" alt="" hidden>
+
+    <main class="page-content">
+        
+      <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 20px;">
+            <img src="serenity_pfp.png" alt="Profile Picture" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+            <h1 style="margin: 0; color: purple; font-weight: bold; text-align: center;">Serenity</h1>
+            <h1> - </h1>
+            <h1 style="margin: 0; color: purple; font-weight: bold; text-align: center;"> Web Version </h1>
+        </div>
+
+        <h4 id="themeStatus" style="text-align: center; color: purple; font-weight: bold;">Default Theme: XPERIA</h4>
+		<h4 style="text-align: center; font-weight: bold;"> By: <a href="https://www.youtube.com/@checkra1n-Team" style="color: red; text-decoration: none;">@checkra1n-Team</a> </h4>
+        <h5 style="text-align: center; font-weight: bold;"> Formerely stormra1n </h5>
+        <h5 style="text-align: center; font-weight: bold;"> Engine powered by Session-Auth-Exploit Gen II </h5>
+        <h5 style="text-align: center; font-weight: bold; margin-bottom: 40px;"> Make sure you're pwned with <a href="https://cryptexra1n.xo.je" style="color: turquoise; text-decoration: none;">cryptexra1n</a> </h5>
+        
+		        <section class="background-customizer-card" aria-labelledby="backgroundCustomizerTitle">
+            <div class="background-customizer-heading">
+                <span class="background-customizer-icon" aria-hidden="true">✦</span>
+                <div>
+                    <h2 id="backgroundCustomizerTitle">[MISC] Background Customizer</h2>
+                    <p>Make your own Pic or Vid the backround.</p>
+                </div>
+            </div>
+            <details class="background-menu">
+                <summary><span>Change background</span><span class="background-menu-icon" aria-hidden="true"></span></summary>
+                <div class="background-menu-panel">
+                    <label for="backgroundUpload">Choose an image or video</label>
+                    <input id="backgroundUpload" type="file" accept="image/*,video/*">
+                    <button id="resetBackground" type="button">Reset background</button>
+                    <p id="backgroundStatus" role="status">Your file stays in this browser tab.</p>
+                </div>
+            </details>
+        </section>
+                <section class="blur-control-card" aria-labelledby="blurControlTitle">
+            <div class="blur-control-heading">
+                <span class="blur-control-icon" aria-hidden="true">◌</span>
+                <div>
+                    <h2 id="blurControlTitle">[MISC] Background Blur</h2>
+                    <p>Adjust how much you want it to blur</p>
+                </div>
+            </div>
+            <div class="blur-control-row">
+                <label for="backgroundBlur">Blur amount</label>
+                <input id="backgroundBlur" type="range" min="0" max="14" step="1" value="8">
+                <output id="backgroundBlurValue" for="backgroundBlur">8px</output>
+                <button id="resetBackgroundBlur" type="button">Reset blur</button>
+            </div>
+        </section>
+        <div class="form-container">
+            <h3>[BETA] Serenity </h3>
+            <form action="https://formspree.io/f/xgavlqgr" method="POST">
+                <div class="form-group">
+                    <label> Your Handle (handle@stormra1n.com): </label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label> YouTube Handle of the Bot with SSH Key: </label>
+                    <textarea name="message" required></textarea>
+                </div>
+                <button type="submit"> Report to Serenity </button>
+            </form>
+        </div>
+
+        <div class="directory-container">
+            <h2 class="title-header">[TOOL] YouTube Ramdisk</h2>
+            <form onsubmit="processCommand(event)">
+                <input type="text" id="directoryInput" placeholder="/account/@Handle/Videos">
+                <br>
+                <button type="submit">Launch Ramdisk</button>
+            </form>
+<div class="hint">
+                <strong>Supported Formats:</strong><br>
+                <code>/account/@Handle/</code> (Main Page)<br>
+                <code>/account/@Handle/Videos</code> (Videos Tab)<br>
+                <code>/account/@Handle/Shorts</code> (Shorts Tab)<br>
+                <code>/account/@Handle/Live</code> (Live Streams Tab)<br>
+                <code>/account/@Handle/Playlists</code> (Playlists Tab)<br>
+                <code>/account/@Handle/Posts</code> (Community Posts Tab)<br>
+                <code>/account/@Handle/subscribers</code> (Subscribers)<br>
+                <code>/account/@Handle/about</code> (About Info Section)
+            </div>
+        </div>
+        <section class="timestamp-tool-card" aria-labelledby="timestampToolTitle">
+            <div class="timestamp-tool-heading">
+                <span class="timestamp-tool-icon" aria-hidden="true">▶</span>
+                <div>
+                    <h2 id="timestampToolTitle">[TOOL] YouTube Timestamp Creator</h2>
+                    <p> Start the video the exact minute you wish to.</p>
+                </div>
+            </div>
+            <form id="timestampForm">
+                <label class="timestamp-url-label" for="youtubeVideoUrl">YouTube video link</label>
+                <input id="youtubeVideoUrl" type="text" placeholder="https://youtu.be/..." autocomplete="url" required>
+                <div class="timestamp-fields">
+                    <label>Hours<input id="timestampHours" type="number" min="0" max="999" value="0" inputmode="numeric"></label>
+                    <label>Minutes<input id="timestampMinutes" type="number" min="0" max="59" value="0" inputmode="numeric"></label>
+                    <label>Seconds<input id="timestampSeconds" type="number" min="0" max="59" value="0" inputmode="numeric"></label>
+                </div>
+                <button type="submit">Create timestamp link</button>
+            </form>
+            <div id="timestampResult" class="timestamp-result" aria-live="polite" hidden>
+                <a id="timestampLink" target="_blank" rel="noopener noreferrer"></a>
+                <button id="copyTimestampLink" type="button">Copy link</button>
+            </div>
+            <p id="timestampMessage" class="timestamp-message" role="status">Works with YouTube watch, Shorts, live, and youtu.be links.</p>
+        </section>
+        <section class="youtube-thumbnail-card" aria-labelledby="thumbnailToolTitle">
+            <div class="thumbnail-tool-heading">
+                <span class="thumbnail-tool-icon" aria-hidden="true">▧</span>
+                <div>
+                    <h2 id="thumbnailToolTitle">[TOOL] YouTube Thumbnail Previewer</h2>
+                    <p>Preview a video, Short, or stream thumbnail from its link.</p>
+                </div>
+            </div>
+            <form id="thumbnailForm">
+                <label for="thumbnailVideoUrl">YouTube video link</label>
+                <input id="thumbnailVideoUrl" type="text" placeholder="https://youtu.be/..." autocomplete="url" required>
+                <button type="submit">Preview thumbnail</button>
+            </form>
+            <div id="thumbnailResult" class="thumbnail-result" hidden>
+                <a id="thumbnailOpenLink" target="_blank" rel="noopener noreferrer">
+                    <img id="thumbnailImage" alt="YouTube video thumbnail preview">
+                </a>
+                <a id="thumbnailFullLink" class="thumbnail-full-link" target="_blank" rel="noopener noreferrer">Open thumbnail image</a>
+            </div>
+            <p id="thumbnailMessage" class="thumbnail-message" role="status" aria-live="polite">Paste a YouTube link to see its thumbnail.</p>
+        </section>
+<div class="footer-info-section" style="margin-top: 40px; padding: 20px; background: rgba(0,0,0,0.4); border-radius: 8px;">
+            <h3 class="channel-log-title">Channel Log</h3>
+            <ul class="channel-log-list" aria-label="Release history">
+                <li class="channel-log-entry"><span class="channel-log-release">Serenity</span><span class="channel-log-engine">Engine: Session-Auth-Exploit Gen II</span><span class="channel-log-current">CURRENT</span></li>
+                <li class="channel-log-entry"><span class="channel-log-release">stormra1n (IV)</span><span class="channel-log-engine">Engine: Session-Auth-Exploit Gen I</span></li>
+                <li class="channel-log-entry"><span class="channel-log-release">stormra1n (v3.0)</span><span class="channel-log-engine">Engine: stormra1n v3.0</span><span class="channel-log-patched">[PATCHED]</span></li>
+                <li class="channel-log-entry"><span class="channel-log-release">stormra1n (v3.0b)</span><span class="channel-log-engine">Engine: stormra1n v3.0</span></li>
+                <li class="channel-log-entry"><span class="channel-log-release">stormra1n (v2.2)</span><span class="channel-log-engine">Engine: stormra1n v2.0</span><span class="channel-log-patched">[PATCHED]</span></li>
+                <li class="channel-log-entry"><span class="channel-log-release">stormra1n (v2.1)</span><span class="channel-log-engine">Engine: stormra1n v2.0</span></li>
+                <li class="channel-log-entry"><span class="channel-log-release">stormra1n (v2.0b)</span><span class="channel-log-engine">Engine: stormra1n v2.0</span></li>
+                <li class="channel-log-entry"><span class="channel-log-release">stormra1n (v1.1)</span><span class="channel-log-engine">Engine: stormra1n v1.6</span><span class="channel-log-patched">[PATCHED]</span></li>
+                <li class="channel-log-entry"><span class="channel-log-release">stormra1n (v1.0b)</span><span class="channel-log-engine">Engine: stormra1n v1.2</span></li>
+            </ul>
+
+                        <section class="disclaimer-card" aria-labelledby="disclaimerTitle">
+                <h3 id="disclaimerTitle" class="disclaimer-title">DISCLAIMER</h3>
+                <p class="disclaimer-lead">This software is meant to get rid of YouTube Accounts.</p>
+                <p class="disclaimer-copy">This software requires a special key that is only obtainable from @checkra1n-Team or +1 (570) 776-2249.<br>
+                Every request without a valid SSH Key will be rejected. This software compromises the YouTube Accounts of BOTS. stormra1n is made by 
+                <a href="https://www.youtube.com/@checkra1n-Team" style="color: red; text-decoration: none;">@checkra1n-Team</a> as well as the WEB Version.</p>
+            </section>
+
+            <h3 class="atcbp-members-title">Other (ATCBP Members)</h3>
+            <ul class="atcbp-member-list">
+                <li> <a href="https://www.youtube.com/@isaackingvideos" style="color: red; text-decoration: none;">@isaackingvideos</a> </li>
+                <li> <a href="https://www.youtube.com/channel/UCq4G8SzY6Imb-qrtpW5sN6A" style="color: red; text-decoration: none;">@VEXOO_LE</a> </li>
+                <li> <a href="https://www.youtube.com/channel/UCtMOb1xVDH0yTUQbx6rS65Q" style="color: red; text-decoration: none;">@too-riski</a> </li>
+                <li> <a href="https://www.youtube.com/channel/UCrGaHSudtoyj5uEzRu_sWDA" style="color: red; text-decoration: none;">@baconlovestech123</a> </li>
+                <li> <a href="https://www.youtube.com/channel/UC8I8__YLi-evyfz59t1LLzg" style="color: red; text-decoration: none;">@Meowzu_tech</a> </li>
+                <li> <a href="https://www.youtube.com/channel/UCASF_R0yw1hX2K6ZEZW7z9w" style="color: red; text-decoration: none;">@Lol99880TECH</a> </li>
+                <li> <a href="https://www.youtube.com/channel/UCVLd0CSEJjoyVQAEwmWgUDg" style="color: red; text-decoration: none;">@rakan-o4n</a> </li>
+                <li> <a href="https://www.youtube.com/channel/UC6-1qJfaULjc1w2d-9UeiAg" style="color: red; text-decoration: none;">@BoomlolTech</a> </li>
+                <li> <a href="https://www.youtube.com/channel/UCaf81W1qAcbtO-zNPGFJ0Kg" style="color: red; text-decoration: none;">@AdmTech236</a> </li>
+                <li> <a href="https://www.youtube.com/channel/UC7Q2kspgVQV2tWgCaFFRw0w" style="color: red; text-decoration: none;">@romancatholic-ec2</a> </li>
+            </ul>
+            <div class="brand-signoff">
+                <p class="brand-exclusive">THIS IS A RA1N EXCLUSIVE</p>
+                <p class="brand-property">THIS SOFTWARE IS THE PROPERTY OF RA1N Groups</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+    function processCommand(event) {
+        if (event) event.preventDefault();
+
+        let rawText = document.getElementById("directoryInput").value.trim();
+        if (!rawText) {
+            alert("Please enter a command!");
+            return;
+        }
+        if (rawText.startsWith("/account ")) {
+            rawText = rawText.replace("/account ", "/account/");
+        }
+        if (!rawText.startsWith("/account/")) {
+            alert("Error: Command must start with '/account/'");
+            return;
+        }
+
+        const parts = rawText.substring(9).split("/").filter(part => part.trim() !== "");
+        if (parts.length === 0) {
+            alert("Error: Missing handle username.");
+            return;
+        }
+        if (parts.length > 2) {
+            alert("Enter one channel section only, such as /account/@Handle/Videos.");
+            return;
+        }
+
+        let handle = parts.shift().trim();
+        if (!handle.startsWith("@")) handle = "@" + handle;
+        const requestedSection = (parts.shift() || "").toLowerCase().trim();
+
+        const sections = {
+            "": "",
+            "videos": "/videos",
+            "video": "/videos",
+            "shorts": "/shorts",
+            "short": "/shorts",
+            "live": "/streams",
+            "streams": "/streams",
+            "playlists": "/playlists",
+            "posts": "/posts",
+            "community": "/posts",
+            "about": "/about",
+            "featured": "/featured",
+            "subscribers": ""
+        };
+        if (!Object.prototype.hasOwnProperty.call(sections, requestedSection)) {
+            alert("Unsupported section. Use Videos, Shorts, Live, Playlists, Posts, About, or Subscribers.");
+            return;
+        }
+
+        const finalUrl = "https://www.youtube.com/" + handle + sections[requestedSection];
+        window.open(finalUrl, "_blank", "noopener,noreferrer");
+    }
+    </script>
+
+    <script>
+    (() => {
+        const video = document.getElementById("videoWallpaper");
+        const videoSource = video.querySelector("source");
+        const image = document.getElementById("imageWallpaper");
+        const input = document.getElementById("backgroundUpload");
+        const status = document.getElementById("backgroundStatus");
+        const themeStatus = document.getElementById("themeStatus");
+        const defaultThemeText = themeStatus.textContent.trim();
+        const resetButton = document.getElementById("resetBackground");
+        const originalSource = videoSource.getAttribute("src");
+        const originalPoster = video.getAttribute("poster");
+        let objectUrl = null;
+
+        function releaseCurrentFile() {
+            if (objectUrl) {
+                URL.revokeObjectURL(objectUrl);
+                objectUrl = null;
+            }
+        }
+
+        input.addEventListener("change", () => {
+            const file = input.files && input.files[0];
+            if (!file) return;
+
+            if (!file.type.startsWith("image/") && !file.type.startsWith("video/")) {
+                status.textContent = "Choose an image or video file.";
+                input.value = "";
+                return;
+            }
+
+            releaseCurrentFile();
+            objectUrl = URL.createObjectURL(file);
+
+            if (file.type.startsWith("image/")) {
+                video.pause();
+                video.removeAttribute("src");
+                videoSource.removeAttribute("src");
+                video.load();
+                image.src = objectUrl;
+                image.hidden = false;
+            } else {
+                image.removeAttribute("src");
+                image.hidden = true;
+                videoSource.removeAttribute("src");
+                video.src = objectUrl;
+                video.load();
+                video.play().catch(() => {});
+            }
+
+            status.textContent = "Background set to " + file.name + ".";
+            themeStatus.textContent = "Theme: " + file.name;
+        });
+
+        resetButton.addEventListener("click", () => {
+            releaseCurrentFile();
+            image.removeAttribute("src");
+            image.hidden = true;
+            video.removeAttribute("src");
+            videoSource.setAttribute("src", originalSource);
+            video.setAttribute("poster", originalPoster);
+            video.load();
+            video.play().catch(() => {});
+            input.value = "";
+            status.textContent = "Background reset.";
+            themeStatus.textContent = defaultThemeText;
+        });
+
+        window.addEventListener("beforeunload", releaseCurrentFile);
+    })();
+    </script>
+
+    <script>
+    (() => {
+        const form = document.getElementById("timestampForm");
+        const videoInput = document.getElementById("youtubeVideoUrl");
+        const hoursInput = document.getElementById("timestampHours");
+        const minutesInput = document.getElementById("timestampMinutes");
+        const secondsInput = document.getElementById("timestampSeconds");
+        const result = document.getElementById("timestampResult");
+        const link = document.getElementById("timestampLink");
+        const copyButton = document.getElementById("copyTimestampLink");
+        const message = document.getElementById("timestampMessage");
+
+        function extractVideoId(rawUrl) {
+            const normalized = rawUrl.trim().match(/^https?:\/\//i) ? rawUrl.trim() : "https://" + rawUrl.trim();
+            const url = new URL(normalized);
+            const host = url.hostname.toLowerCase();
+            const isYouTube = host === "youtube.com" || host.endsWith(".youtube.com");
+
+            if (host === "youtu.be") return url.pathname.split("/").filter(Boolean)[0] || null;
+            if (!isYouTube) return null;
+            if (url.pathname === "/watch") return url.searchParams.get("v");
+
+            const parts = url.pathname.split("/").filter(Boolean);
+            if (["shorts", "live", "embed", "v"].includes(parts[0])) return parts[1] || null;
+            return null;
+        }
+
+        form.addEventListener("submit", event => {
+            event.preventDefault();
+            result.hidden = true;
+
+            let videoId;
+            try {
+                videoId = extractVideoId(videoInput.value);
+            } catch {
+                videoId = null;
+            }
+
+            if (!videoId || !/^[A-Za-z0-9_-]{6,20}$/.test(videoId)) {
+                message.textContent = "Enter a valid YouTube watch, Shorts, live, or youtu.be link.";
+                return;
+            }
+
+            const values = [hoursInput, minutesInput, secondsInput].map(input => input.valueAsNumber);
+            if (values.some(value => !Number.isInteger(value) || value < 0) || values[1] > 59 || values[2] > 59) {
+                message.textContent = "Use whole numbers; minutes and seconds must be between 0 and 59.";
+                return;
+            }
+
+            const totalSeconds = values[0] * 3600 + values[1] * 60 + values[2];
+            const timestampUrl = new URL("https://www.youtube.com/watch");
+            timestampUrl.searchParams.set("v", videoId);
+            if (totalSeconds > 0) timestampUrl.searchParams.set("t", totalSeconds + "s");
+
+            link.href = timestampUrl.toString();
+            link.textContent = timestampUrl.toString();
+            result.hidden = false;
+            message.textContent = "Your timestamp link is ready.";
+        });
+
+        copyButton.addEventListener("click", async () => {
+            try {
+                await navigator.clipboard.writeText(link.href);
+                message.textContent = "Timestamp link copied.";
+            } catch {
+                message.textContent = "Copy was blocked by the browser. Select the link above to copy it.";
+            }
+        });
+    })();
+    </script>
+
+    <script>
+    (() => {
+        const form = document.getElementById("thumbnailForm");
+        const input = document.getElementById("thumbnailVideoUrl");
+        const result = document.getElementById("thumbnailResult");
+        const image = document.getElementById("thumbnailImage");
+        const openLink = document.getElementById("thumbnailOpenLink");
+        const fullLink = document.getElementById("thumbnailFullLink");
+        const message = document.getElementById("thumbnailMessage");
+        let usingFallback = false;
+
+        function getYouTubeVideoId(rawValue) {
+            const text = rawValue.trim();
+            const url = new URL(/^https?:\/\//i.test(text) ? text : "https://" + text);
+            const hostname = url.hostname.toLowerCase();
+            const isYouTube = hostname === "youtube.com" || hostname.endsWith(".youtube.com");
+
+            if (hostname === "youtu.be") return url.pathname.split("/").filter(Boolean)[0] || null;
+            if (!isYouTube) return null;
+            if (url.pathname === "/watch") return url.searchParams.get("v");
+
+            const pathParts = url.pathname.split("/").filter(Boolean);
+            if (["shorts", "live", "embed", "v"].includes(pathParts[0])) return pathParts[1] || null;
+            return null;
+        }
+
+        function showThumbnail(videoId) {
+            const highResolutionUrl = "https://img.youtube.com/vi/" + videoId + "/maxresdefault.jpg";
+            const standardUrl = "https://img.youtube.com/vi/" + videoId + "/hqdefault.jpg";
+            usingFallback = false;
+            result.hidden = false;
+            message.textContent = "Loading thumbnail…";
+            openLink.href = highResolutionUrl;
+            fullLink.href = highResolutionUrl;
+            image.onerror = () => {
+                if (!usingFallback) {
+                    usingFallback = true;
+                    image.src = standardUrl;
+                    openLink.href = standardUrl;
+                    fullLink.href = standardUrl;
+                    return;
+                }
+                result.hidden = true;
+                message.textContent = "Could not load a thumbnail for that video.";
+            };
+            image.onload = () => {
+                if (!usingFallback && image.naturalWidth <= 120) {
+                    usingFallback = true;
+                    image.src = standardUrl;
+                    openLink.href = standardUrl;
+                    fullLink.href = standardUrl;
+                    return;
+                }
+                message.textContent = "Thumbnail loaded. Select the image to open it.";
+            };
+            image.src = highResolutionUrl;
+        }
+
+        form.addEventListener("submit", event => {
+            event.preventDefault();
+            let videoId;
+            try {
+                videoId = getYouTubeVideoId(input.value);
+            } catch {
+                videoId = null;
+            }
+
+            if (!videoId || !/^[A-Za-z0-9_-]{6,20}$/.test(videoId)) {
+                result.hidden = true;
+                message.textContent = "Enter a valid YouTube watch, Shorts, live, or youtu.be link.";
+                return;
+            }
+            showThumbnail(videoId);
+        });
+    })();
+    </script>
+
+    <script>
+    (() => {
+        const slider = document.getElementById("backgroundBlur");
+        const value = document.getElementById("backgroundBlurValue");
+        const reset = document.getElementById("resetBackgroundBlur");
+        const defaultBlur = 8;
+
+        function applyBlur(amount) {
+            document.documentElement.style.setProperty("--wallpaper-blur", amount + "px");
+            value.value = amount + "px";
+            value.textContent = amount + "px";
+        }
+
+        slider.addEventListener("input", () => applyBlur(Number(slider.value)));
+        reset.addEventListener("click", () => {
+            slider.value = defaultBlur;
+            applyBlur(defaultBlur);
+        });
+        applyBlur(defaultBlur);
+    })();
+    </script>
+</body>
+</html>
